@@ -15,13 +15,13 @@ public class DriverFactory {
         if ("firefox".equals(property)) {
             System.setProperty("webdriver.gecko.driver", "src/driver/geckodriver.exe");
             DriverFactory.driver = new FirefoxDriver();
-//        } else {
-//            System.setProperty("webdriver.chrome.driver", "src/driver/chromedriver.exe");
-//            DriverFactory.driver = new ChromeDriver();
         } else {
+            System.setProperty("webdriver.chrome.driver", "src/driver/chromedriver.exe");
+            DriverFactory.driver = new ChromeDriver();
+        } /*else {
             System.setProperty("webdriver.ie.driver", "src/driver/IEDriverServer.exe");
             DriverFactory.driver = new InternetExplorerDriver();
-        }
+        }*/
         DriverFactory.driver.get(Constants.BASE_URL);
         DriverFactory.driver.manage().window().maximize();
         return DriverFactory.driver;

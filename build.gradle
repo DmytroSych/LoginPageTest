@@ -19,17 +19,18 @@ task ChromeTest(type: Test) {
     useTestNG() {
         suites "testng.xml"
     }
+}
 
-    task FirefoxTest(type: Test) {
-        systemProperty "driver", "firefox"
-        useTestNG() {
-            suites "testng.xml"
-        }
-    }
-    task IETest(type: Test) {
-        systemProperty "driver", "ie"
-        useTestNG() {
-            suites "testng.xml"
-        }
+task FirefoxTest(type: Test) {
+    systemProperty "driver", "firefox"
+    useTestNG() {
+        suites "testng.xml"
     }
 }
+task IETest(type: Test) {
+    systemProperty "driver", "ie"
+    useTestNG() {
+        suites "testng.xml"
+    }
+}
+
