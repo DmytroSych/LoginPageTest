@@ -16,6 +16,7 @@ dependencies {
 
 task ChromeTest(type: Test) {
     systemProperty "driver", "chrome"
+    testLoggin.ShowStandardStreams=true
     useTestNG() {
         suites "testng.xml"
     }
@@ -23,12 +24,14 @@ task ChromeTest(type: Test) {
 
 task FirefoxTest(type: Test) {
     systemProperty "driver", "firefox"
+    testLoggin.ShowStandardStreams=true
     useTestNG() {
         suites "testng.xml"
     }
 }
 task IETest(type: Test) {
     systemProperty "driver", "ie"
+    testLoggin.ShowStandardStreams=true
     useTestNG() {
         suites "testng.xml"
     }
